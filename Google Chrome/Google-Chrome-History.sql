@@ -39,7 +39,7 @@ SELECT  DISTINCT /* If you don't use the DISTINCT statement, you will end up wit
 
 /*	visit_source.source,*/
 	/* Checking if activity is locally browsed, synced, or otherwise */
-/*	CASE visit_source.source
+	CASE visit_source.source
 		WHEN 0 THEN 'Synced'
 		WHEN 1 OR visit_source.source IS NULL THEN 'Local'
 		WHEN 2 THEN 'Extension'
@@ -47,7 +47,7 @@ SELECT  DISTINCT /* If you don't use the DISTINCT statement, you will end up wit
 		WHEN 4 THEN 'IE Imported'
 		WHEN 5 THEN 'Safari Imported'
 		ELSE 'New value!: '||visit_source.source||' Check source code for meaning!'
-	END AS 'Visit Source', */
+	END AS 'Visit Source',
 
 /*	transition, */
 	/* Checking the value of the right most byte of the four byte transition value and decoding it */
