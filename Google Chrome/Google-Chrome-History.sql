@@ -33,11 +33,11 @@ SELECT  DISTINCT /* If you don't use the DISTINCT statement, you will end up wit
 	visits.id AS 'visits.id' /* Bookmark that does not have a corresponding visit in 'visits' table will have a NULL value */,
 	urls.url,
 	urls.title,
-/*	visits.from_visit AS 'from visit', */
+	visits.from_visit AS 'from visit', 
 	urls.visit_count AS 'visit_count',
-/*	urls.typed_count AS 'typed_count', */
+	urls.typed_count AS 'typed_count',
 
-/*	visit_source.source,*/
+	visit_source.source,
 	/* Checking if activity is locally browsed, synced, or otherwise */
 	CASE visit_source.source
 		WHEN 0 THEN 'Synced'
@@ -49,7 +49,7 @@ SELECT  DISTINCT /* If you don't use the DISTINCT statement, you will end up wit
 		ELSE 'New value!: '||visit_source.source||' Check source code for meaning!'
 	END AS 'Visit Source',
 
-/*	transition, */
+	transition,
 	/* Checking the value of the right most byte of the four byte transition value and decoding it */
 	CASE (transition&0xff)
 		WHEN 0 THEN 'Clicked on a link'
