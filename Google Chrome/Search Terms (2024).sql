@@ -17,7 +17,7 @@
 			keywords.date_created AS "keywords.date_created",
 			CASE keywords.date_created
 				WHEN 0 THEN 0
-			ELSE
+	S		ELSE
 				datetime(keywords.date_created/1000000-11644473600,'unixepoch') 
 			END AS "Decoded keywords.date_created (UTC)",
 			keywords.last_modified AS "keywords.last_modified",
