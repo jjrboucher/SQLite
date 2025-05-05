@@ -19,9 +19,9 @@ SELECT 	addresses.guid,
         atk_country.value AS "Country",
         addresses.use_count, 
         addresses.use_date,
-        DATETIME(use_date,'unixepoch') AS "Decoded use_date (UTC)",
+        DATETIME(addresses.use_date,'unixepoch') AS "Decoded use_date (UTC)",
         addresses.date_modified,
-        DATETIME(date_modified,'unixepoch') AS "Decoded date_modified (UTC)"
+        DATETIME(addresses.date_modified,'unixepoch') AS "Decoded date_modified (UTC)"
 FROM addresses
 LEFT JOIN (SELECT * FROM address_type_tokens WHERE type == 3 ) AS atk_first_name ON addresses.guid == atk_first_name.guid
 LEFT JOIN (SELECT * FROM address_type_tokens WHERE type == 5 ) AS atk_last_name ON addresses.guid == atk_last_name.guid
