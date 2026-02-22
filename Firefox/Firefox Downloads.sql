@@ -1,5 +1,5 @@
 /*
-	Date: 22 February 2026
+	Date: February 22, 2026
 	Firefox downloads query.
 	Initially authored by Jacques Boucher - jjrboucher@gmail.com
 	Subsequently improved by Damien Bloor (Canadian Police College) by using json_extract now that it's supported by SQLite
