@@ -28,7 +28,7 @@ SELECT 	url,
 		END AS "Decoded visit_type",
 		
 		visit_date,
-		DATETIME(visit_date/1000000,'unixepoch') AS "Decoded Visit Date"
+		DATETIME(visit_date/1000000,'unixepoch') AS "Decoded Visit Date (UTC)"
 
 FROM moz_historyvisits, moz_places 
 
