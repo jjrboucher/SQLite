@@ -24,7 +24,7 @@ SELECT 	moz_places.id,
 		CASE json_extract(a2.content,"$.deleted")
 			WHEN 0 THEN "No"
 			WHEN 1 THEN "Yes"
-			ELSE "NEW value detected! Check the source code!"
+			ELSE "NEW value detected! " || json_extract(a1.content,"$.deleted") || " Check the source code!"
 		End AS "Decoded Deleted via Firefox",
 
 		json_extract(a2.content,"$.fileSize") as "File Size in bytes"
